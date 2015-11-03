@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <title>Modernizr - CSS Example</title>
+ 
+    <style type="text/css" media="screen">
+      div.wsno, div.wsyes { display: none }
+      .no-websockets div.wsno { display: block }
+      .websockets div.wsyes { display: block }
+    </style>
+ 
+    <script src="../lib/modernizr.custom.20122.js" type="text/javascript"></script>
+  </head>
+  <body>
+ 
+    <div class="wsno">
+      Your browser does not support WebSockets.
+    </div>
+ 
+    <div class="wsyes">
+      Your browser supports WebSockets.
+    </div>
+ 
+  </body>
+</html>

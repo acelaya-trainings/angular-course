@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML5 Required Fields</title>
+<style>
+body {
+	background-color:#fff;
+	color:#000;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin-left:20px;
+}
+h1 {
+	color:#063;
+}
+form {
+	margin-left:40px;
+}
+label {
+	font-weight:bold;
+}
+label {
+	display:inline-block;
+	width:100px;
+}
+input:not([type=submit]) {
+	width: 250px;
+}
+input[required] {
+	background-color: #E5F5EF;
+}
+</style>
+<script>
+window.onload = function() {
+	var elem = document.createElement('input');
+	if (typeof elem.required != 'boolean') {
+        // get the form and its input elements
+		var form = document.forms[0],
+			inputs = form.elements;
+		inputs[0].focus();
+
+		form.onsubmit = function() {
+			var required = [], att, val;
+			// loop through input elements looking for required
+			for (var i = 0; i < inputs.length; i++) {
+				att = inputs[i].getAttribute('required');
+				// if required, get the value and trim whitespace
+				if (att != null) {
+					val = inputs[i].value;
+					// if the value is empty, add to required array
+					if (val.replace(/^\s+|\s+$/g, '') == '') {
+						required.push(inputs[i].name);
+					}
+				}
+			}
+			// show alert if required array contains any elements
+			if (required.length > 0) {
+				alert('The following fields are required: ' +
+					required.join(', '));
+				// prevent the form from being submitted
+				return false;
+			}
+		};
+	}
+}
+</script>
+</head>
+
+<body>
+<h1>HTML5 Required Fields</h1>
+<form method="get" name="form1">
+    <p>Fields with a colored background are required</p>
+    <p>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" autofocus required>
+    </p>
+    <p>
+        <label for="website">Website:</label>
+        <input type="url" name="website" id="website">
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+    </p>
+    <p>
+        <input type="submit" name="send" id="send" value="Submit">
+    </p>
+</form>
+</body>
+</html>

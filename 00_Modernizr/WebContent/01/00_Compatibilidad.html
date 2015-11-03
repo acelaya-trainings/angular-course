@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>Probando Modernizr</title>
+	<style type="text/css">
+	#micaja{
+		border-left: 1px solid #ccc;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #666;
+		border-right: 1px solid #666;
+		padding: 10px;
+	}
+	.boxshadow #micaja{
+		border: 1px solid #ccc;
+		-webkit-box-shadow: #999 3px 3px 3px;
+		-moz-box-shadow: #999 3px 3px 3px;
+		box-shadow: #999 3px 3px 3px;
+	}
+	</style>
+	<script src="../lib/modernizr-latest.js"></script>	
+</head>
+<body>
+    <div id="micaja">
+		Esta caja tendrá una sombra creada con CSS3. Si tu navegador no es compatible, borde de 1 píxel que simulará una sombra.
+	</div>
+</body>
+</html>

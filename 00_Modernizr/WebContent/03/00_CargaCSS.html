@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Probando Modernizr</title>
+	<style type="text/css">
+	
+	#central{
+		width: 600px;
+		padding: 30px 60px 50px 40px;
+		font-size: 1.3em;
+		background: url(images/patron.png);
+		color: #33c;
+	}
+	.multiplebgs #central{
+		background: url(images/diamante.png) no-repeat bottom right, url(images/patron.png);
+	}
+	.textshadow #central p{
+		color: #fff;
+		text-shadow: -1px 1px 5px #006;
+	}
+	#milista{
+		margin: 0;
+		padding: 0;
+		font-size: 0.8em;
+		-moz-column-width: 120px;
+		-moz-column-gap: 25px;
+		-moz-column-rule: 2px solid #ccf;
+		-webkit-column-width: 120px;
+		-webkit-column-gap: 25px;
+		-webkit-column-rule: 2px solid #ccf;
+		column-width: 120px;
+		column-gap: 25px;
+		column-rule: 2px solid #ccf;
+		overflow: hidden;
+	}
+	#milista li{
+		list-style: none;
+		margin: 0;
+		padding: 2px 0;
+		float: left;
+		width: 120px;
+		margin-right: 25px;
+	}
+	.csscolumns #milista li{
+		float: none;
+		margin: 0;
+		width: auto;
+	}
+	</style>
+	<script src="../lib/modernizr-latest.js"></script>	
+</head>
+<body>
+    <div id="central">
+		<p>
+			Aquí vamos a colocar cualquier texto para ver si se ve correctamente... vamos a intentar crear varios fondos, pero solo los verán algunos navegadores, así que crearemos estilos alternativos con un único fondo para los navegadores que no lo soporten.
+		</p>
+		<ul id="milista">
+			<li>Elemento 1</li>
+			<li>Elemento dos</li>
+			<li>Tercero </li>
+			<li>Un cuarto</li>
+			<li>Quinto elemento</li>
+			<li>Sexto y último</li>
+		</ul>
+	</div>
+</body>
+</html>

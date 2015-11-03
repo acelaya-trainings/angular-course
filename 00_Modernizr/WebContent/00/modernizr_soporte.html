@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <title>Modernizr - Javascript Example</title>
+ 
+    <script src="../lib/jquery.min.js" type="text/javascript"></script>
+    <script src="../lib/modernizr.custom.20122.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+        if (Modernizr.websockets)
+        {
+          $("#result").html('Your browser has support for Web Sockets');
+        }
+        else
+        {
+          $("#result").html('Your browser does not support Web Sockets');
+        }
+      });
+    </script>
+  </head>
+  <body>
+ 
+    <p id="result"></p>
+ 
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<title>Columns and Shadows</title>
+<style>
+body {
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #fff;
+	color: #000;
+	margin-left: 2em;
+}
+img {
+	-webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+	-moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+.no-boxshadow img {
+	border-right: #8A8A8A 2px solid;
+	border-bottom: #8A8A8A 2px solid;	
+}
+.columns {
+	width: 650px;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	
+}
+.columns p:first-child {
+	margin-top: 0;
+}
+.columns img {
+	margin-left: 10px;
+}
+.no-csscolumns img {
+	margin: 3px 8px 3px 0;
+	float: left;
+}
+</style>
+<script src="js/modernizr.adc.js"></script>
+</head>
+
+<body>
+<h1>Bryce Canyon</h1>
+<div class="columns">
+    <p> Bryce Canyon National Park in Southern Utah is a natural amphitheater with distinctive pillars called <i>hoodoos</i> caused by wind, water, and ice erosion.</p>
+    <img src="images/bryce_canyon.jpg" width="290" height="179" alt="Bryce Canyon, Utah">
+    <p>Individual hoodoos reach up to 200 foot (60m) in height. In summer, the heat on the floor of the canyon can be oppressive. But in winter, the temperature regularly falls below freezing.</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent aliquam,  justo convallis luctus rutrum, erat nulla fermentum diam, at nonummy quam  ante ac quam. Maecenas urna purus, fermentum id, molestie in, commodo  porttitor, felis. Nam blandit quam ut lacus. Quisque ornare risus quis  ligula. Phasellus tristique purus a augue condimentum adipiscing. Aenean  sagittis. Etiam leo pede, rhoncus venenatis, tristique in, vulputate at, odio.</p>
+    <p>Donec eu mi sed turpis feugiat feugiat. Integer turpis arcu, pellentesque  eget, cursus et, fermentum ut, sapien. Fusce metus mi, eleifend  sollicitudin, molestie id, varius et, nibh. Donec nec libero.</p>
+</div>
+</body>
+</html>
