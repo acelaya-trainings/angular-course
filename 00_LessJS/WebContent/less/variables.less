@@ -1,0 +1,42 @@
+@imagenes:'./imgs';
+.panel{
+  background:url("@{imagenes}/uno.jpg") no-repeat;
+  min-height: 200px;
+}
+.degradado(@desde:orange, @hasta:green){
+  background-color: @desde;
+  background-image: linear-gradient(left, @desde, @hasta);
+  background-image: -webkit-linear-gradient(left, @desde, @hasta);
+  background-image: -o-linear-gradient(left, @desde, @hasta);
+  background-image: -moz-linear-gradient(left, @desde, @hasta);
+  background-image: -ms-linear-gradient(left, @desde, @hasta);
+}
+.grado{
+  .degradado;
+}
+
+.switch(uno, @color){
+  background: fadein(@color, 30%); //menos transparente
+}
+.switch(dos, @color){
+  background: fadeout(@color, 30%); //más transparente
+}
+.switch(tres, @color){
+  background: spin(@color, 20); // cambio de ºmatiz
+}
+.switch(@_, @color){
+  border-radius: 10px 10px 10px 10px;
+  min-height: 100px;
+}
+
+@caso:uno;
+
+.clase{
+  .switch(@caso,orange);
+}
+.clase2{
+  .switch(dos,orange);
+}
+.clase3{
+  .switch(tres,orange);
+}

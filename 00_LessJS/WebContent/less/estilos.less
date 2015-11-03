@@ -1,0 +1,34 @@
+@color: orange;
+@copia: 'color';
+.miMixin(@color:orange){
+  font-size: 2em;
+  background: @color;
+}
+.box-shadow(@color:green,@x:1px,@y:1px,@width:200px,@solid:50px){
+  box-shadow:         @x @y @width @solid @color;
+  -o-box-shadow:      @x @y @width @solid @color;
+  -ms-box-shadow:     @x @y @width @solid @color;
+  -webkit-box-shadow: @arguments;
+  -ms-box-shadow:     @arguments;
+  -moz-box-shadow:    @arguments;
+}
+.estilo{
+  .box-shadow;
+  border: black;
+  border-width: thick;
+}
+#namespace{
+  .estilo{
+      position:absolute;
+      left: 100px;
+    }
+}
+.compilado{
+  #namespace .estilo;
+}
+.multiplicado{
+  background: (@color/2);
+}
+.reducido{
+  background: lighten(@@copia, 30%);
+}
