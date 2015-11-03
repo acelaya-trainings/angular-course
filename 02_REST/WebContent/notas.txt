@@ -1,0 +1,11 @@
+ Run you web application in Eclipse and test the availability of your REST service under: 
+ "http://localhost:8080/de.vogella.jersey.todo/rest/todos". 
+ You should see the XML representation of your Todo items.
+
+To see the count of Todo items use "http://localhost:8080/de.vogella.jersey.todo/rest/todos/count" 
+to see an exiting todo use "http://localhost:8080/de.vogella.jersey.todo/rest/todos/{id}", 
+e.g. "http://localhost:8080/de.vogella.jersey.todo/rest/todos/1" to see the todo with ID 1. 
+We currently have only todos with the id's 1 and 2, all other requests will result an HTTP error code.
+
+Please note that with the browser you can only issue HTTP GET requests. 
+The next chapter will use the jersey client libraries to issue get, post and delete. 
