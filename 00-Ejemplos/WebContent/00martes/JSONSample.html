@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var producto = {
+		id : 1,
+		nombre : 'Fregona',
+		cantidad : 13,
+		precio : 1,
+		disponible : true,
+		marca: {
+			id: 1,
+			nombre: 'Vileda'
+		}
+	};
+	
+	console.log(producto.nombre);
+	console.log(producto.marca.nombre);
+	
+	var supermercado = {
+		id: 1,
+		nombre: 'Aldi',
+		productos: [
+            producto,
+            {
+        		id : 2,
+        		nombre : 'Escoba',
+        		cantidad : 0,
+        		precio : 1,
+        		disponible : false,
+        		marca: {
+        			id: 1,
+        			nombre: 'Vileda'
+        		}
+        	}
+        ]
+	};
+	
+	console.log(supermercado.productos[1].nombre);
+	
+	var JSONString = JSON.stringify(supermercado);
+	console.log(JSONString);
+	
+	var JSONObject = JSON.parse(JSONString);
+	console.log(JSONObject);
+</script>
+</head>
+<body>
+    <h1>Hola caracola</h1>
+</body>
+</html>
