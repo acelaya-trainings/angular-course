@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<!-- scope of angular js, in this case the complete page-->
+<head>
+    <title>example of angular js and jasmin</title>
+    <script src="libs/angular-1.1.1/angular.min.js"></script>
+
+    <!-- here the js-controller files should be included-->
+    <script src="todoController.js"></script>
+    <link rel="stylesheet" href="SomeCss.css">
+</head>
+<body>
+<h2>Todo</h2>
+<!-- The view calls the controller, TodoCtrl should be found in the imported js files-->
+<div ng-controller="TodoCtrl">
+    <!-- theses fields are deliverd by the controller-->
+    <span>{{remaining()}} of {{todos.length}} remaining</span>
+    [ <a href="" ng-click="archive()">archive</a> ]
+    <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+    </ul>
+    <!-- the form submit calls the addTodo method of the TodoCtrl-->
+    <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+    </form>
+</div>
+</body>
+</html>
