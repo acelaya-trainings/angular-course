@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="EncuestaApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-ui.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/test.css">
+    </head>
+    <body>
+        <div ng-controller="TestController">
+            <img src="img/AngularJS-logo.png" alt="AngularJS" class="logoAngularJS"/>
+            <div class="questions">
+                <div class="question" ng-repeat="question in questions">
+                    <div class="text-right">
+                        <button class="btn btn-xs btn-danger" ng-click="removeQuestion(question.id)" id="{{ question.id }}">&times;</button>
+                    </div>
+                    <p class="status-{{question.status}}">{{question.text}}</p>
+                    <div class="answers" ng-repeat="answer in question.answers">
+                        <input type="radio" ng-model="question.userAnswer" value="{{answer.id}}"
+                               name="question-{{question.id}}" id="answer-{{question.id}}-{{answer.id}}" ng-change="validate(question)"/>
+                        <label for="answer-{{question.id}}-{{answer.id}}">{{answer.text}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="userStatus {{userStatus}}">
+                <span>Has acertado {{validAnswers}} de {{questions.length}}</span>
+            </div>
+            <div class="form-container">
+                <form class="form-horizontal" name="add-form" ng-submit="addQuestion()">
+                    <p class="text-right">
+                        <button class="add btn btn-primary" type="submit">
+                            <i class="glyphicon glyphicon-plus"></i> Agregar
+                        </button>
+                    </p>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">
+                            Question text:                    
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" name="question" class="form-control" ng-model="question.text">
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="form-group">
+                            <label class="control-label col-sm-1">
+                                A                    
+                            </label>
+                            <div class="col-sm-11">
+                                <div class="input-group answer-group">
+                                    <input type="hidden" name="answers[1][id]" value="1" class="id" ng-model="question.answer1.id">
+                                    <input type="text" name="answers[1][text]" class="form-control answer" ng-model="question.answer1.text">
+                                    <div class="input-group-addon">
+                                        <input type="radio" name="validAnswer" value="1" checked ng-model="question.validAnswer">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="form-group">
+                            <label class="control-label col-sm-1">
+                                A                    
+                            </label>
+                            <div class="col-sm-11">
+                                <div class="input-group answer-group">
+                                    <input type="hidden" name="answers[2][id]" value="2" class="id" ng-model="question.answer2.id">
+                                    <input type="text" name="answers[2][text]" class="form-control answer" ng-model="question.answer2.text">
+                                    <div class="input-group-addon">
+                                        <input type="radio" name="validAnswer" value="2" ng-model="question.validAnswer">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="form-group">
+                            <label class="control-label col-sm-1">
+                                A                    
+                            </label>
+                            <div class="col-sm-11">
+                                <div class="input-group answer-group">
+                                    <input type="hidden" name="answers[3][id]" value="3" class="id" ng-model="question.answer3.id">
+                                    <input type="text" name="answers[3][text]" class="form-control answer" ng-model="question.answer3.text">
+                                    <div class="input-group-addon">
+                                        <input type="radio" name="validAnswer" value="3" ng-model="question.validAnswer">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

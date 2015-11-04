@@ -1,0 +1,116 @@
+body {
+    color: #333;
+    font: 14px Comic sans MS,sans-serif;
+}
+
+div.questions {
+    float: left;
+    width: 45%;
+}
+
+div.userStatus, .form-container {
+    margin: 10px 0 0 0;
+    font-size: 1.5em;
+    float: right;
+    width: 50%;
+}
+div.userStatus {
+	height: 175px;
+	background: no-repeat 50px;
+}
+
+.form-container label {
+	font-size: 14px;
+}
+
+div.looser {
+    background-image: url('../img/looser.gif');
+}
+
+div.guru {
+    background-image: url('../img/guru.gif');
+}
+
+div.poor {
+    background-image: url('../img/poor.gif');
+}
+
+div.question {
+    margin: 0 0 30px 0;
+}
+
+div.question p {
+    margin: 15px 0 5px 0;
+    padding: 10px 5px 10px 25px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+}
+
+div.question p.status-ok {
+    background: url('../img/ok.png') no-repeat 3px #d7fbe6;
+    border: 1px solid green;
+    -moz-animation-name: show-ok;
+    -moz-animation-duration: 2s;
+    -webkit-animation-name: show-ok;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+div.question p.status-error {
+    background: url('../img/error.png') no-repeat 3px #fbdad6;
+    border: 1px solid red;
+    -moz-animation-name: show-error;
+    -moz-animation-duration: 2s;
+    -webkit-animation-name: show-error;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+
+@-moz-keyframes show-ok {
+    from {
+        opacity: 0;
+    }
+ 
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes show-ok {
+    from {
+        opacity: 0;
+    }
+ 
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-moz-keyframes show-error {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes show-error {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+img.logoAngularJS {
+    bottom: 5%;
+    position: absolute;
+    opacity: 0.3;
+    right: 5%;
+}
