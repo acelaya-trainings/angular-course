@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html ng-app="EncuestaApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Cuestionario con AngularJS</title>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-ui.js"></script>
+    <script src="js/script.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/test.css"/>
+</head>
+<body>
+
+<div id="test" ng-controller="TestController">
+    <h1>Ejemplo de cuestionario utilizando AngularJS</h1>
+    <img src="img/AngularJS-logo.png" alt="AngularJS" class="logoAngularJS"/>
+    <div class="questions">
+        <div class="question" ng-repeat="question in questions">
+            <p class="status-{{question.status}}">{{question.text}}
+            <a class="borrado" data-ng-click="deleteQuestion({{question.id}})">X</a></p>
+            <div class="answers" ng-repeat="answer in question.answers">
+                <input type="radio" ng-model="question.userAnswer" value="{{answer.id}}"
+                       name="question-{{question.id}}" id="answer-{{question.id}}-{{answer.id}}" ng-change="validate(question)"/>
+                <label for="answer-{{question.id}}-{{answer.id}}">{{answer.text}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="userStatus {{userStatus}}">
+        <span>Has acertado {{validAnswers}} de {{questions.length}}</span>
+    </div>
+    
+    <div class="formulario">
+    <h3>Formulario de creación de preguntas</h3>
+		Pregunta:<br />
+		<input type="text" width="250" data-ng-model="inputData.question" placeholder="Teclea tu pregunta" />
+		<br />
+		Respuestas:<br />
+		<input type="text" data-ng-model="inputData.answer1" placeholder="Teclea tu respuesta" /><br />
+		<input type="text" data-ng-model="inputData.answer2" placeholder="Teclea tu respuesta" /><br />
+		<input type="text" data-ng-model="inputData.answer3" placeholder="Teclea tu respuesta" /><br />
+		Y la respuesta válida es:<br />
+		<input type="number" data-ng-model="inputData.validAnswer"/><br />
+		<br />
+		<button data-ng-click="addQuestion()">Ingresa pregunta</button>
+		<br />
+		<br />
+    </div>
+</div>
+
+</body>
+</html>
