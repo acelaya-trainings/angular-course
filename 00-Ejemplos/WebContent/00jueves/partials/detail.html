@@ -1,0 +1,25 @@
+<div id="productDetail">
+    <h1>Product</h1>
+    <div class="product">
+        <form>
+	        Id:<br />
+			<input type="text" width="250" data-ng-model="product.id" ng-disabled="detail"/>
+			<br />
+			Nombre:<br />
+			<input type="text" width="250" data-ng-model="product.name" ng-disabled="detail"/>
+			<br />
+			Precio:<br />
+			<input type="text" width="250" data-ng-model="product.price" ng-disabled="detail"/>
+			<br />
+			Marca:<br />
+			<input type="text" width="250" data-ng-model="product.brand" ng-disabled="detail"/>
+		
+		<br />
+		<button data-ng-click="saveProduct()" ng-disabled="detail">Save</button>
+		<br />
+		<br />	
+        </form>
+        
+        <a href="#/products">&laquo; Products List</a>
+    </div>
+</div>

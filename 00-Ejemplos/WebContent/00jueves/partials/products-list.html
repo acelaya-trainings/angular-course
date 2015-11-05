@@ -1,0 +1,28 @@
+<div id="products">
+    <h1>Product list</h1>
+    <div class="products">
+        <table>
+			<thead>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Precio</th>
+				<th>Marca</th>
+				<th></th>
+			</thead>
+			<tbody id="productsListBody">
+				<tr ng-repeat="product in products">
+					<td>{{product.id}}</td>
+					<td>{{product.name}}</td>
+					<td>{{product.price}}€</td>
+					<td>{{product.brand}}</td>
+					<td>
+						<a href="#/detail/{{product.id}}">Detail</a>&nbsp;
+						<a href="#/edit/{{product.id}}">Edit</a>&nbsp;
+						<a href="#" ng-click="deleteProduct(product.id)">Delete</a>
+					</td>
+				</tr>	
+			</tbody>
+		</table>
+		<a href="#/create">Create New Product!</a>
+    </div>
+</div>
